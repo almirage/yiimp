@@ -18,3 +18,7 @@ web/serverconfig.php
 web/assets/
 *.rej
 *.orig
+.project
+.settings/
+.idea/
+.cproject
