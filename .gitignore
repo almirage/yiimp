@@ -22,3 +22,5 @@ web/assets/
 .settings/
 .idea/
 .cproject
+core.*
+Debug/

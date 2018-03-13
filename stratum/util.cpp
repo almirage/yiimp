@@ -7,6 +7,7 @@
 
 bool json_get_bool(json_value *json, const char *name)
 {
+	if (json == NULL) return false;
 	for(int i=0; i<json->u.object.length; i++)
 	{
 		if(!strcmp(json->u.object.values[i].name, name))
@@ -18,6 +19,7 @@ bool json_get_bool(json_value *json, const char *name)
 
 json_int_t json_get_int(json_value *json, const char *name)
 {
+	if (json == NULL) return 0;
 	for(int i=0; i<json->u.object.length; i++)
 	{
 		if(!strcmp(json->u.object.values[i].name, name))
@@ -29,6 +31,7 @@ json_int_t json_get_int(json_value *json, const char *name)
 
 double json_get_double(json_value *json, const char *name)
 {
+	if (json == NULL) return 0;
 	for(int i=0; i<json->u.object.length; i++)
 	{
 		if(!strcmp(json->u.object.values[i].name, name))
@@ -40,6 +43,7 @@ double json_get_double(json_value *json, const char *name)
 
 const char *json_get_string(json_value *json, const char *name)
 {
+	if (json == NULL) return NULL;
 	for(int i=0; i<json->u.object.length; i++)
 	{
 		if(!strcmp(json->u.object.values[i].name, name))
@@ -51,6 +55,7 @@ const char *json_get_string(json_value *json, const char *name)
 
 json_value *json_get_array(json_value *json, const char *name)
 {
+	if (json == NULL) return NULL;
 	for(int i=0; i<json->u.object.length; i++)
 	{
 //		if(json->u.object.values[i].value->type == json_array && !strcmp(json->u.object.values[i].name, name))
@@ -74,6 +79,7 @@ json_value *json_get_array(json_value *json, const char *name)
 
 json_value *json_get_object(json_value *json, const char *name)
 {
+	if (json == NULL) return NULL;
 	for(int i=0; i<json->u.object.length; i++)
 	{
 		if(!strcmp(json->u.object.values[i].name, name))
