@@ -478,7 +478,7 @@ bool client_submit(YAAMP_CLIENT *client, json_value *json_params)
 
 	// minimum hash diff begins with 0000, for all...
 	uint8_t pfx = submitvalues.hash_bin[30] | submitvalues.hash_bin[31];
-	if(pfx) {
+	if(pfx && strcmp(g_current_algo->name, "yescrypt") != 0) {
 		if (g_debuglog_hash) {
 			debuglog("Possible %s error, hash starts with %02x%02x%02x%02x\n", g_current_algo->name,
 				(int) submitvalues.hash_bin[31], (int) submitvalues.hash_bin[30],
